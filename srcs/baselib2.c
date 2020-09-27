@@ -6,7 +6,7 @@
 /*   By: agraton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 15:36:51 by agraton           #+#    #+#             */
-/*   Updated: 2020/09/27 11:48:14 by agraton          ###   ########.fr       */
+/*   Updated: 2020/09/27 16:51:11 by agraton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char		*ft_strndup(char *str, int n)
 	return (newstr);
 }
 
-int		ft_strcmp(char *s1, char *s2)
+int			ft_strcmp(char *s1, char *s2)
 {
 	while (*s1 && *s1 == *s2)
 	{

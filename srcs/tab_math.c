@@ -6,7 +6,7 @@
 /*   By: agraton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 07:46:11 by agraton           #+#    #+#             */
-/*   Updated: 2020/09/27 14:45:46 by agraton          ###   ########.fr       */
+/*   Updated: 2020/09/27 16:52:18 by agraton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*
 ** This does: src = src + add * 10^offset;
 */
+
 void	ft_tab_add(char *src, char *add, int offset)
 {
 	int		i;
@@ -139,7 +140,6 @@ int		ft_tabcmp(char *tab1, char *tab2)
 
 /*
 ** This does: ntab = src / div
-NOT COMPLETED
 */
 
 char	*ft_div_tab(char *src, char *div)
@@ -163,14 +163,10 @@ char	*ft_div_tab(char *src, char *div)
 		while (ft_tabcmp_e(tmp, div, ft_strlen(src) - ft_strlen(div) - i) >= 0)
 		{
 			ntab[i]++;
-//			printf("Startsubing\n");
 			ft_tab_sub(tmp, div, ft_strlen(src) - ft_strlen(div) - i);
-//			printf("Endsubbing: %s$%s$\n", tmp, ntab);
 		}
 	}
 	ntab[i] = '\0';
-	free (tmp);
+	free(tmp);
 	return (ntab);
 }
-
-

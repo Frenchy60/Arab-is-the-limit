@@ -6,7 +6,7 @@
 /*   By: agraton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 10:03:38 by agraton           #+#    #+#             */
-/*   Updated: 2020/09/27 15:12:26 by agraton          ###   ########.fr       */
+/*   Updated: 2020/09/27 16:46:11 by agraton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int		ft_check_str(char *str)
 	return (0);
 }
 
-// doens't handle 0;
 int		ft_translate_r(char *tab, t_dict *dict, int main)
 {
 	t_dict	*tmp;
@@ -38,7 +37,6 @@ int		ft_translate_r(char *tab, t_dict *dict, int main)
 	{
 		if (ft_strlen(tab) > 2)
 		{
-//			printf("Dividing\n");
 			ft_translate_r(ft_div_tab(tab, dict->digit), dict, 0);
 		}
 		ft_putstr(dict->letter);
@@ -46,9 +44,7 @@ int		ft_translate_r(char *tab, t_dict *dict, int main)
 		{
 			write(1, " ", 1);
 		}
-//		printf("Modding\n");
 		ft_translate_r(ft_mod_tab(tab, dict->digit), dict->next, main);
-//		printf("Modding end\n");
 	}
 	free(tab);
 	return (0);
@@ -64,6 +60,5 @@ int		ft_translate(char *str, t_dict *dict)
 		return (ft_error(2));
 	if (ft_strlen(str) > ft_strlen(dict->digit) + 2)
 		return (ft_error(1));
-//	ft_add_elem_end(&dict, ft_gen_elem(NULL, NULL, NULL));
 	return (ft_translate_r(tab, dict, 1));
 }

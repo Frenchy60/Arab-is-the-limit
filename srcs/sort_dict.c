@@ -6,7 +6,7 @@
 /*   By: agraton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 07:28:10 by agraton           #+#    #+#             */
-/*   Updated: 2020/09/27 10:00:07 by agraton          ###   ########.fr       */
+/*   Updated: 2020/09/27 16:47:32 by agraton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void		ft_swap_if_dict(t_dict **start)
 {
 	t_dict	*tmp;
+
 	if ((ft_tabcmp((*start)->digit, (*start)->next->digit)) < 0)
 	{
 		tmp = (*start)->next->next;

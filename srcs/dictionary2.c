@@ -6,7 +6,7 @@
 /*   By: agraton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 18:10:34 by agraton           #+#    #+#             */
-/*   Updated: 2020/09/27 07:23:17 by agraton          ###   ########.fr       */
+/*   Updated: 2020/09/27 16:27:08 by agraton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,15 +78,4 @@ t_dict		*ft_remove_last_dict_elem(t_dict *dict)
 	ft_free_dict(tmp->next);
 	tmp->next = NULL;
 	return (dict);
-}
-
-//TESTIN ONLY: DON'T LEAVE THIS IN
-
-void		ft_print_dict(t_dict *dict)
-{
-	while (dict)
-	{
-		printf("%s:%s$\n", dict->digit, dict->letter);
-		dict = dict->next;
-	}
 }

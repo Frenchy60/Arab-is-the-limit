@@ -6,7 +6,7 @@
 /*   By: agraton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 14:45:42 by agraton           #+#    #+#             */
-/*   Updated: 2020/09/27 07:22:15 by agraton          ###   ########.fr       */
+/*   Updated: 2020/09/27 16:48:11 by agraton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,8 +109,8 @@ t_dict		*ft_gen_dict(char *file)
 	{
 		digit = ft_fetch_text(fd, ':');
 		letter = ft_fetch_text(fd, '\n');
-		ft_add_elem_end(&dict, ft_gen_elem
-				(ft_fixletter(letter), ft_fixdigit(digit), NULL));
+		ft_add_elem_end(&dict, ft_gen_elem(
+					ft_fixletter(letter), ft_fixdigit(digit), NULL));
 		if (-1 == (flag = ft_check_last_elem(&dict)))
 		{
 			ft_free_dict(dict);
