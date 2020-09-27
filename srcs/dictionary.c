@@ -6,11 +6,16 @@
 /*   By: agraton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 14:45:42 by agraton           #+#    #+#             */
-/*   Updated: 2020/09/27 16:48:11 by agraton          ###   ########.fr       */
+/*   Updated: 2020/09/27 17:23:25 by agraton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush_02.h"
+
+/*
+** Allocates memory for a new element of the struct and instanciate it with the
+** values passed as parameters
+*/
 
 t_dict		*ft_gen_elem(char *letter, char *digit, t_dict *next)
 {
@@ -23,6 +28,10 @@ t_dict		*ft_gen_elem(char *letter, char *digit, t_dict *next)
 	dict->next = next;
 	return (dict);
 }
+
+/*
+** Removes all the extra white spaces before or after the digits
+*/
 
 char		*ft_fixdigit(char *str)
 {
@@ -50,6 +59,10 @@ char		*ft_fixdigit(char *str)
 	return (newstr);
 }
 
+/*
+** Remove all the extra white spaces before or after the letters
+*/
+
 char		*ft_fixletter(char *str)
 {
 	int		i;
@@ -74,6 +87,10 @@ char		*ft_fixletter(char *str)
 	return (newstr);
 }
 
+/*
+** Fetch the text from the file untill @end and returns it
+*/
+
 char		*ft_fetch_text(int fd, char end)
 {
 	char	buff[100];
@@ -92,6 +109,12 @@ char		*ft_fetch_text(int fd, char end)
 		buff[i] = '\0';
 	return (ft_strdup(buff));
 }
+
+/*
+** Open the file of the dictionnary, prints an error if the file is not readable
+** Fetch the differents part of the text we need then implement the struct
+** Adds them to the struct and checks if it's valid
+*/
 
 t_dict		*ft_gen_dict(char *file)
 {

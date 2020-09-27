@@ -6,11 +6,16 @@
 /*   By: agraton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 07:28:10 by agraton           #+#    #+#             */
-/*   Updated: 2020/09/27 16:47:32 by agraton          ###   ########.fr       */
+/*   Updated: 2020/09/27 17:49:57 by agraton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush_02.h"
+
+/*
+** Swap the current struct with the next one, if they are not in descending
+** order (by some kind of black magic)
+*/
 
 void		ft_swap_if_dict(t_dict **start)
 {
@@ -24,6 +29,10 @@ void		ft_swap_if_dict(t_dict **start)
 		(*start)->next->next = tmp;
 	}
 }
+
+/*
+** Sorts the dictionary (represented by a chain of struct) by descending order
+*/
 
 void		ft_sort_dict(t_dict **start)
 {

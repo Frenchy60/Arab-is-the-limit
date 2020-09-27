@@ -6,11 +6,15 @@
 /*   By: agraton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 14:51:52 by agraton           #+#    #+#             */
-/*   Updated: 2020/09/27 16:41:24 by agraton          ###   ########.fr       */
+/*   Updated: 2020/09/27 17:23:16 by agraton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush_02.h"
+
+/*
+** Prints the error according to the parameter passed
+*/
 
 int			ft_error(int i)
 {
