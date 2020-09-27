@@ -6,7 +6,7 @@
 /*   By: agraton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 07:46:11 by agraton           #+#    #+#             */
-/*   Updated: 2020/09/27 14:02:25 by agraton          ###   ########.fr       */
+/*   Updated: 2020/09/27 14:45:46 by agraton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,11 +157,11 @@ char	*ft_div_tab(char *src, char *div)
 		ntab[i] = '0';
 	ntab[i] = '\0';
 	i = -1;
-	while (++i + ft_strlen(div) <= ft_strlen(src)) //= needed???
+	while (++i + ft_strlen(div) <= ft_strlen(src))
 	{
 		ntab[i] = '0';
 		while (ft_tabcmp_e(tmp, div, ft_strlen(src) - ft_strlen(div) - i) >= 0)
-		{		//Shouldn't it be >= 0??
+		{
 			ntab[i]++;
 //			printf("Startsubing\n");
 			ft_tab_sub(tmp, div, ft_strlen(src) - ft_strlen(div) - i);

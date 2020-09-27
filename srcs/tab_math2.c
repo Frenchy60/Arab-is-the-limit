@@ -6,7 +6,7 @@
 /*   By: agraton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 10:49:58 by agraton           #+#    #+#             */
-/*   Updated: 2020/09/27 14:04:28 by agraton          ###   ########.fr       */
+/*   Updated: 2020/09/27 15:12:29 by agraton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_fix_tab(char *tab)
 		{
 			tab[i] = tab[i + 1];
 		}
-		tab[i] = tab[i + 1];
+		tab[i] = '\0';
 	}
 }
 
@@ -68,14 +68,16 @@ char	*ft_mod_tab(char *src, char *mod)
 	int		i;
 
 	ft_fix_tab(mod);
+//	printf("Modding start with: $%s$ : $%s$\n", src, mod);
 	ntab = ft_strdup(src);
 	i = -1;
 	while (++i + ft_strlen(mod) <= ft_strlen(ntab)) //Just like div??
 	{
 		while (ft_tabcmp_e(ntab, mod, ft_strlen(src) - ft_strlen(mod) - i) >= 0)
 		{
-			ft_tab_sub(ntab, mod, ft_strlen(src - ft_strlen(mod) - i));
+			ft_tab_sub(ntab, mod, ft_strlen(src) - ft_strlen(mod) - i);
 		}
 	}
+//	printf("Modding end with: $%s$\n", ntab);
 	return (ntab);
 }

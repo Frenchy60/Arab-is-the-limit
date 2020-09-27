@@ -6,7 +6,7 @@
 /*   By: agraton <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/27 10:03:38 by agraton           #+#    #+#             */
-/*   Updated: 2020/09/27 13:09:01 by agraton          ###   ########.fr       */
+/*   Updated: 2020/09/27 15:12:26 by agraton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		ft_check_str(char *str)
 	while (str[++i])
 		if (str[i] > '9' || str[i] < '0')
 			return (ft_error(1));
-	if (i < 2)
+	if (i < 1)
 		return (ft_error(1));
 	return (0);
 }
@@ -31,17 +31,24 @@ int		ft_translate_r(char *tab, t_dict *dict, int main)
 	t_dict	*tmp;
 
 	tmp = dict;
+	ft_fix_tab(tab);
 	while (ft_tabcmp(tab, dict->digit) < 0 && (dict->next))
 		dict = dict->next;
-	if (dict->next)
+	if (dict->next && ft_tabcmp(tab, "0"))
 	{
-		ft_translate_r(ft_div_tab(tab, dict->digit), dict, 0);
+		if (ft_strlen(tab) > 2)
+		{
+//			printf("Dividing\n");
+			ft_translate_r(ft_div_tab(tab, dict->digit), dict, 0);
+		}
 		ft_putstr(dict->letter);
 		if (ft_strlen(dict->digit) != 1 || !main)
 		{
 			write(1, " ", 1);
 		}
-		ft_translate_r(ft_mod_tab(tab, dict->digit), dict->next, 1);
+//		printf("Modding\n");
+		ft_translate_r(ft_mod_tab(tab, dict->digit), dict->next, main);
+//		printf("Modding end\n");
 	}
 	free(tab);
 	return (0);
